@@ -42,14 +42,15 @@ def _detect_chromium() -> str:
     if configured and (os.path.isfile(configured) or shutil.which(configured)):
         return configured
     candidates = [
+        "/usr/bin/google-chrome",
+        "/usr/bin/google-chrome-stable",
         "/usr/bin/chromium",
         "/usr/bin/chromium-browser",
         "/snap/bin/chromium",
-        "/usr/bin/google-chrome",
-        "/usr/bin/google-chrome-stable",
+        "google-chrome",
+        "google-chrome-stable",
         "chromium",
         "chromium-browser",
-        "google-chrome",
         "chrome",
         r"C:\Program Files\Google\Chrome\Application\chrome.exe",
         r"C:\Program Files (x86)\Google\Chrome\Application\chrome.exe",
