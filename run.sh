@@ -13,4 +13,7 @@ else
     PY_BIN=python
 fi
 
+# Tự động phục hồi account nếu chưa có
+$PY_BIN restore_accounts.py 2>/dev/null || true
+
 exec $PY_BIN -m uvicorn app:app --host 0.0.0.0 --port 10000
